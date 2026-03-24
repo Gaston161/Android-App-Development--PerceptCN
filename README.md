@@ -556,7 +556,7 @@ Ou depuis Android Studio : `Run ▶` → sélectionner ton appareil physique.
 **Gaston**
 *Développeur principal — Architecture & Capteurs*
 
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/TON_USERNAME)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Gaston161)
 
 *Projet académique — Cours de Développement d'Applications Mobiles Android · 2026*
 
@@ -588,7 +588,7 @@ copies or substantial portions of the Software.
 
 <br/>
 
-**PerceptNote + EchoesClass** — Fait avec ☕ et Kotlin · Yaoundé · 2026
+**PerceptNote + EchoesClass** — Fait avec ☕ et Kotlin · ICT University Yaoundé · 2026
 
 *Si ce projet t'inspire, laisse une ⭐ — ça compte vraiment !*
 
