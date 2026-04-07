@@ -1,0 +1,6 @@
+# local.properties — TEMPLATE (copier en local.properties, ne JAMAIS commiter)
+sdk.dir=E\:\\Android\\Sdk
+# Clé API Claude — https://console.anthropic.com/
+CLAUDE_API_KEY=sk-ant-REMPLACE_PAR_TA_VRAIE_CLE
+# Web Client ID Firebase — console.firebase.google.com > Auth > Google
+GOOGLE_WEB_CLIENT_ID=XXXXX.apps.googleusercontent.com

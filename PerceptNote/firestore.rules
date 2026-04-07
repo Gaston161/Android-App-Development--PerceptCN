@@ -1,0 +1,95 @@
+// 📄 firestore.rules
+// Règles de sécurité Firestore — à déployer via la console Firebase
+// ou via : firebase deploy --only firestore:rules
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // =============================================
+    // PROFILS UTILISATEURS
+    // Chaque utilisateur ne peut lire/modifier que son propre profil.
+    // Les admins peuvent tout lire (contrôlé via le champ isAdmin).
+    // =============================================
+    match /users/{userId} {
+      allow read: if request.auth != null &&
+        (request.auth.uid == userId || isAdmin());
+
+      allow create: if request.auth != null &&
+        request.auth.uid == userId &&
+        validUserProfile();
+
+      allow update: if request.auth != null &&
+        request.auth.uid == userId &&
+        // Empêcher l'auto-promotion en admin
+        !request.resource.data.diff(resource.data).affectedKeys().hasAny(['isAdmin']);
+
+      allow delete: if false; // Suppression uniquement via Admin SDK
+
+      // Sessions d'un utilisateur
+      match /sessions/{sessionId} {
+        allow read, write: if request.auth != null &&
+          request.auth.uid == userId;
+      }
+
+      // Notes d'un utilisateur
+      match /notes/{noteId} {
+        allow read, write: if request.auth != null &&
+          request.auth.uid == userId;
+      }
+
+      // Historique chat (write-only pour l'IA, read uniquement par le propriétaire)
+      match /chatHistory/{chatId} {
+        allow read: if request.auth != null && request.auth.uid == userId;
+        allow create: if request.auth != null && request.auth.uid == userId;
+        allow update, delete: if false;
+      }
+    }
+
+    // =============================================
+    // FEEDBACK / RAPPORTS DE BUG
+    // Tout utilisateur authentifié peut créer un feedback.
+    // Seuls les admins peuvent lire et modifier.
+    // =============================================
+    match /feedback/{feedbackId} {
+      allow create: if request.auth != null &&
+        request.resource.data.userId == request.auth.uid &&
+        request.resource.data.description.size() > 10;
+
+      allow read, update: if request.auth != null && isAdmin();
+      allow delete: if false;
+    }
+
+    // =============================================
+    // NOTIFICATIONS GLOBALES (admin only en écriture)
+    // =============================================
+    match /broadcasts/{broadcastId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && isAdmin();
+    }
+
+    // =============================================
+    // STATS GLOBALES (anonymisées, lecture publique)
+    // =============================================
+    match /stats/global {
+      allow read: if true;
+      allow write: if request.auth != null && isAdmin();
+    }
+
+    // =============================================
+    // HELPER FUNCTIONS
+    // =============================================
+    function isAdmin() {
+      return request.auth != null &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isAdmin == true;
+    }
+
+    function validUserProfile() {
+      let data = request.resource.data;
+      return data.keys().hasAll(['uid', 'email', 'createdAt']) &&
+        data.uid == request.auth.uid &&
+        data.email is string &&
+        data.email.size() > 0;
+    }
+  }
+}

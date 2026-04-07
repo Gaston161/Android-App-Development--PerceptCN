@@ -1,0 +1,29 @@
+<!-- 📄 app/src/main/res/values/strings.xml -->
+<resources>
+    <string name="app_name">PerceptNote</string>
+    <string name="app_tagline">Pose ton téléphone. Le reste est automatique.</string>
+
+    <!-- Auth -->
+    <string name="sign_in_google">Continuer avec Google</string>
+    <string name="biometric_title">Connexion à PerceptNote</string>
+    <string name="biometric_subtitle">Utilisez votre empreinte ou votre visage</string>
+    <string name="biometric_negative">Utiliser mon compte Google</string>
+
+    <!-- Permissions -->
+    <string name="permission_camera">Caméra requise pour l\'OCR</string>
+    <string name="permission_mic">Microphone requis pour la transcription</string>
+    <string name="permission_location">Localisation requise pour la mémoire géographique</string>
+
+    <!-- Notifications -->
+    <string name="notif_recording_title">PerceptNote</string>
+    <string name="notif_recording_text">Enregistrement en cours…</string>
+    <string name="notif_recording_stop">Arrêter</string>
+    <string name="notif_channel_recording">Enregistrement PerceptNote</string>
+    <string name="notif_channel_broadcast">Annonces</string>
+    <string name="notif_channel_feedback">Réponses feedback</string>
+
+    <!-- Errors -->
+    <string name="error_no_internet">Pas de connexion réseau</string>
+    <string name="error_api_key">Clé API invalide. Vérifiez local.properties</string>
+    <string name="error_camera_unavailable">Caméra non disponible</string>
+</resources>
