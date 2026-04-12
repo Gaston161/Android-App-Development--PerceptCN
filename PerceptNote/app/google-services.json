@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "652247688315",
+    "project_id": "perceptnote",
+    "storage_bucket": "perceptnote.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:652247688315:android:60c7dcd8c9761bfa2aaede",
+        "android_client_info": {
+          "package_name": "com.ictu.PerceptNote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "652247688315-t0q4id12vqsfj1556ofev6aucb1nm2uv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAb4L8zSd62NvMagZns0fBxb7rYFDwP0ho"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "652247688315-t0q4id12vqsfj1556ofev6aucb1nm2uv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:652247688315:android:38c82429aa017fe72aaede",
+        "android_client_info": {
+          "package_name": "com.perceptnote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "652247688315-t0q4id12vqsfj1556ofev6aucb1nm2uv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAb4L8zSd62NvMagZns0fBxb7rYFDwP0ho"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "652247688315-t0q4id12vqsfj1556ofev6aucb1nm2uv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

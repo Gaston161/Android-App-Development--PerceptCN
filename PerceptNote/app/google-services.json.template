@@ -1,0 +1,52 @@
+// 📄 app/google-services.json — PLACEHOLDER
+// ══════════════════════════════════════════════════════════════════════
+// CE FICHIER DOIT ÊTRE REMPLACÉ PAR LE VRAI google-services.json
+// obtenu depuis la console Firebase.
+//
+// ÉTAPES :
+// 1. Aller sur https://console.firebase.google.com/
+// 2. Créer un projet "PerceptNote"
+// 3. Cliquer "Ajouter une application Android"
+// 4. Package name : com.perceptnote
+// 5. Télécharger google-services.json
+// 6. Remplacer CE fichier par le fichier téléchargé
+// 7. Activer dans Firebase :
+//    - Authentication > Google Sign-In
+//    - Firestore Database
+//    - Storage
+//    - Cloud Messaging
+// ══════════════════════════════════════════════════════════════════════
+{
+  "project_info": {
+    "project_number": "REMPLACER",
+    "project_id": "perceptnote-REMPLACER",
+    "storage_bucket": "perceptnote-REMPLACER.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:REMPLACER:android:REMPLACER",
+        "android_client_info": {
+          "package_name": "com.perceptnote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "REMPLACER.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "REMPLACER"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
